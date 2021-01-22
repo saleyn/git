@@ -3,23 +3,23 @@
     email = saleyn@gmail.com
 
 [alias]
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    mg = merge --no-ff
+    st    = status
+    ci    = commit
+    br    = branch
+    co    = checkout
+    mg    = merge --no-ff
     diffs = diff --stat
     df    = diff --stat
+    dn    = diff --name-only
     diffn = diff --name-only
     difft = difftool
     dt    = difftool
-    lg = log -p
-    l  = log --pretty=format:'"%h %an, %ar: %s"' --graph
-    ll = log --graph --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr)%Creset [%C(bold blue)%an%Creset]' --abbrev-commit --date=relative --all
-    lla = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    ls  = ls-files
+    lg    = log -p
+    l     = log --pretty=format:'"%h %an, %ar: %s"' --graph
+    ll    = log --graph --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr)%Creset [%C(bold blue)%an%Creset]' --abbrev-commit --date=relative --all
+    lla   = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls    = ls-files
     shows   = show --stat
-    save    = stash
     restore = stash apply
     rl      = reflog show HEAD@{now} -10
     desc    = describe
