@@ -1,6 +1,6 @@
 [user]
-    name = Serge Aleynikov
-    email = saleyn@gmail.com
+    name  =
+    email =
 
 [alias]
     st    = status
@@ -93,8 +93,10 @@
         fi"
     fixhooks = !"\
       if [ -d .git ]; then \
+        DIR=\"$(git rev-parse --show-toplevel)\"; \
         for f in pre-commit; do \
-          rm -f .git/hooks/$f && ln -vs /usr/share/git-core/templates/hooks/$f .git/hooks/$f; \
+          [ -f \"$DIR/.gitconfig/$f\" ] && FILE=\"$DIR/.gitconfig/$f\" || FILE=/usr/share/git-core/templates/hooks/$f; \
+          rm -f .git/hooks/$f && ln -vs \"$FILE\" .git/hooks/$f; \
         done; \
       else \
         echo No .git directory found; \
